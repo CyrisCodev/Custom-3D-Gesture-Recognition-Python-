@@ -10,6 +10,7 @@ app = Gesture(app_id)
 manager = DataManager()
 app.train(manager.folders,manager.names,manager.labels)	
 app.initClassifier()
+last_msg="0.00"
 
 s = socket.socket()
 host = socket.gethostname() 
@@ -46,7 +47,7 @@ while True:
            if("right" in msg): 
                #controller.fun(12)
                value_to_controller=12
-   elif(len(msg)>=1024):
+   elif((len(msg)>=1024)and(last_msg!=msg)):
            test = app.getDataFromFile("test.txt")
            result = app.predict(test, manager.labels)
            print manager.folders[result-1]
