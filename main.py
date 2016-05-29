@@ -3,6 +3,7 @@
 """
 
 from train import train
+from sklearn.metrics import accuracy_score
 import plotter
 from matplotlib import pyplot as plt
 
@@ -18,8 +19,11 @@ class Gesture(object):
 		self.clf  = trainer.getSVM()
 		return self.clf
 
-	def predict(self,feature):
-		return self.clf.predict([feature])
+	def predict(self,feature,labels):
+         y_test=[1,2]
+         prediction1=self.clf.predict([feature])
+         #print("Accuracyyyyyy "+accuracy_score(y_test, prediction1))
+         return self.clf.predict([feature])
 
 	def addGesture(self,feature,label):
 		self.features.append(feature)

@@ -48,7 +48,7 @@ while True:
                value_to_controller=12
    elif(len(msg)>=1024):
            test = app.getDataFromFile("test.txt")
-           result = app.predict(test)
+           result = app.predict(test, manager.labels)
            print manager.folders[result-1]
            app.plotImage("test.txt")
            #controller.fun(result)
