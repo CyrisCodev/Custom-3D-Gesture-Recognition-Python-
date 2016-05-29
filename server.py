@@ -27,6 +27,7 @@ while True:
    msg = c.makefile().read(-1)
    w=win32gui
    window_in_focus_name=w.GetWindowText(w.GetForegroundWindow())
+   print window_in_focus_name
    print(len(msg)) 
    msg = msg[2:]
    #print msg
@@ -60,7 +61,7 @@ while True:
        print "data not recieved properly"
        
    #checking if the picasa photo viewer is opened or not    
-   #if("Picasa Photo" in window_in_focus_name):
-           #controller.fun(value_to_controller)
-   controller.fun(value_to_controller)
+   if(("Picasa Photo" in window_in_focus_name)or("Flash" in window_in_focus_name)or("PowerPoint" in window_in_focus_name)):
+           controller.fun(value_to_controller)
+   #controller.fun(value_to_controller)
    c.close()    
