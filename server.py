@@ -11,6 +11,7 @@ manager = DataManager()
 app.train(manager.folders,manager.names,manager.labels)	
 app.initClassifier()
 last_msg="0.00"
+value_to_controller=-1
 
 s = socket.socket()
 host = socket.gethostname() 
@@ -28,7 +29,7 @@ while True:
    window_in_focus_name=w.GetWindowText(w.GetForegroundWindow())
    print(len(msg)) 
    msg = msg[2:]
-   print msg
+   #print msg
    file = open("test.txt","w")
    file.write(msg)
    file.close()   
@@ -59,7 +60,7 @@ while True:
        print "data not recieved properly"
        
    #checking if the picasa photo viewer is opened or not    
-   if("Picasa Photo" in window_in_focus_name):
-           controller.fun(value_to_controller)
-    
+   #if("Picasa Photo" in window_in_focus_name):
+           #controller.fun(value_to_controller)
+   controller.fun(value_to_controller)
    c.close()    

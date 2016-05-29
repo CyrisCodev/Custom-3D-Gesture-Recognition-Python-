@@ -33,11 +33,15 @@ print(system_width)
 def fun(inp):
     if(inp==1):
         k.tap_key(k.right_key)
+        
         #m.drag(100,100)
     elif(inp==2):
         #will perform zoom-in 
-        k.tap_key(k.up_key)
+        k.tap_key(k.left_key)
     elif(inp==3):
+        #will perform zoom-in 
+        k.tap_key(k.up_key)
+    elif(inp==4):
         #will perform zoom-in 
         k.tap_key(k.down_key)
     elif(inp == 9):
@@ -56,11 +60,11 @@ def fun(inp):
         #right button pressed
         #will perform leftward motion
         move_image(-move_factor,0)
-    elif(inp==4):
+    elif(inp==14):
         k.press_key(k.alt_key)
         k.tap_key(k.right_key,n=8)
         k.release_key(k.alt_key)
-    elif(inp==5):
+    elif(inp==15):
         k.press_keys([k.windows_l_key,'d'])
     else:
         k.press_key(k.alt_key)
