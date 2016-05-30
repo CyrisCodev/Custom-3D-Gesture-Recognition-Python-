@@ -30,7 +30,7 @@ while True:
    print window_in_focus_name
    print(len(msg)) 
    msg = msg[2:]
-   #print msg
+   print msg
    file = open("test.txt","w")
    file.write(msg)
    file.close()   
